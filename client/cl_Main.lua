@@ -36,8 +36,8 @@ TriggerEvent('chat:addSuggestion', Config.chatSuggestion.command, Config.chatSug
 	{ name = "ped", help = Config.chatSuggestion['ped'] }
 })
 
-RegisterNetEvent('delete:ped')
-AddEventHandler('delete:ped', function()
+RegisterNetEvent('gjn_setped:delete:ped')
+AddEventHandler('gjn_setped:delete:ped', function()
 	local hash2 = GetHashKey('mp_m_freemode_01')
 	RequestModel(hash2)
 	while not HasModelLoaded(hash2)
@@ -53,7 +53,7 @@ end)
 
 AddEventHandler('esx:onPlayerSpawn', function()
 	if IsSpawned then
-		TriggerServerEvent('setPed:onSpawn', ServerPlayer)
+		TriggerServerEvent('gjn_setped:setPed:onSpawn', ServerPlayer)
 		IsSpawned = false
 	end
 end)

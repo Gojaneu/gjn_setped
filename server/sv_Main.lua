@@ -162,8 +162,8 @@ RegisterCommand(Config.command, function(source, args)
 	end
 end)
 
-RegisterServerEvent('setPed:onSpawn')
-AddEventHandler('setPed:onSpawn', function(id)
+RegisterServerEvent('gjn_setped:setPed:onSpawn')
+AddEventHandler('gjn_setped:setPed:onSpawn', function(id)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local identifier = ESX.GetIdentifier(source)
 	MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = @rockstarId', {
